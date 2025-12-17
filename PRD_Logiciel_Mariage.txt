@@ -1,0 +1,104 @@
+
+PRODUCT REQUIREMENTS DOCUMENT (PRD)  
+LOGICIEL WEB DE GESTION DES ACTES DE MARIAGE  
+(Application multi-mairies)
+
+1. RÉSUMÉ DU PRODUIT
+Le logiciel est une application web destinée à la gestion des actes de mariage pour plusieurs mairies, avec des rôles différenciés : Super Admin, Admin Mairie, Agent Mairie, et Consultation. 
+Il permet l'enregistrement, la consultation, la modification et la génération d'actes de mariage, ainsi que la gestion des villes, arrondissements et mairies.
+
+2. OBJECTIFS DU PRODUIT
+- Centraliser les actes de mariage
+- Garantir l'isolation des données par mairie
+- Faciliter la génération et le téléchargement des actes
+- Offrir une interface professionnelle, claire et efficace
+- Assurer la sécurité et la traçabilité des actions
+
+3. UTILISATEURS ET RÔLES
+3.1 Super Admin
+- Accès global
+- Gestion des mairies et utilisateurs
+- Dashboard global et statistiques
+- Paramètres système
+
+3.2 Admin Mairie
+- Gestion d’une seule mairie
+- Gestion des utilisateurs de sa mairie
+- Dashboard spécifique à sa mairie
+
+3.3 Agent Mairie
+- Création et consultation des mariages
+- Génération des actes
+- Pas d’accès aux paramètres critiques
+
+3.4 Consultation
+- Lecture seule
+- Accès aux actes et mariages
+
+4. FONCTIONNALITÉS PRINCIPALES
+
+4.1 Authentification & Sécurité
+- Connexion / déconnexion
+- Réinitialisation du mot de passe
+- Permissions basées sur les rôles
+- Sessions sécurisées
+
+4.2 Dashboard
+Super Admin : statistiques globales, alertes système
+Admin Mairie : statistiques propres à la mairie
+Agent : aperçu simplifié des mariages récents
+
+4.3 Gestion des Mairies (Super Admin)
+- Création, modification et suppression
+- Informations détaillées (nom, ville, arrondissement, adresse, contact, logo)
+- Paramètres spécifiques (numérotation des actes, cachet, langue)
+- Isolation stricte des données
+
+4.4 Gestion des Mariages
+- Liste des mariages
+- Recherche et filtres
+- CRUD complet
+- Génération PDF des actes
+
+4.5 Gestion des Actes
+- Numérotation unique par mairie
+- Historique des modifications
+- Export / impression PDF
+
+4.6 Villes et Arrondissements
+- Gestion hiérarchique Ville → Arrondissement → Mairie
+- Réutilisation dans les formulaires
+
+4.7 Gestion des Utilisateurs
+- Création et modification
+- Attribution de rôles et permissions
+- Activation / désactivation
+- Association à une mairie
+
+4.8 Paramètres
+- Paramètres globaux (Super Admin)
+- Paramètres mairie (Admin)
+
+5. EXIGENCES NON FONCTIONNELLES
+- Application responsive (desktop-first)
+- Performance < 300ms pour les requêtes
+- Sécurité : hash des mots de passe, protection CSRF/XSS
+- Scalabilité pour l’ajout de nouvelles mairies
+- Traçabilité et journalisation
+
+6. TECHNOLOGIES RECOMMANDÉES
+Frontend : React ou Vue.js + Ant Design / Material UI / Tailwind CSS
+Backend : Laravel ou NestJS
+Base de données : PostgreSQL
+Graphiques : Apache ECharts, Recharts ou Chart.js
+Diagrammes et documentation : Lucidchart, draw.io, Mermaid
+
+7. LIVRABLES ATTENDUS
+- PRD validé
+- Maquettes UI/UX complètes
+- Diagrammes UML et d’architecture
+- Code source
+- Documentation technique et utilisateur
+- Plan de test fonctionnel
+
+FIN DU DOCUMENT

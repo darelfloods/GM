@@ -1,0 +1,106 @@
+
+CAHIER DES CHARGES  
+LOGICIEL WEB DE GESTION DES ACTES DE MARIAGE  
+(Application multi-mairies)
+
+1. PRÉSENTATION GÉNÉRALE
+Le présent cahier des charges décrit la conception et le développement d’un logiciel web professionnel destiné à la gestion des actes de mariage pour les mairies et services d’état civil.
+Le logiciel est une application centralisée permettant à plusieurs mairies d’utiliser la plateforme tout en garantissant une isolation stricte des données entre elles. Il s’agit d’un logiciel métier administratif, accessible via navigateur web, orienté desktop.
+
+2. OBJECTIFS DU PROJET
+- Centraliser la gestion des actes de mariage
+- Faciliter l’enregistrement, la consultation et la génération des actes
+- Structurer les données administratives (villes, arrondissements, mairies)
+- Mettre en place un système de rôles et permissions
+- Garantir la sécurité, la fiabilité et la traçabilité des données
+- Proposer une interface moderne, claire et efficace
+
+3. TYPOLOGIE DES UTILISATEURS
+3.1 Super Admin (Plateforme) - Gère l’ensemble du système - Crée et administre les mairies - Accède aux statistiques globales - Gère les utilisateurs globaux - Configure les paramètres système
+3.2 Admin de Mairie - Gère une seule mairie - Administre les utilisateurs de sa mairie - Configure les paramètres spécifiques de sa mairie - Supervise les actes et mariages de sa mairie
+3.3 Agent de Mairie - Enregistre et consulte les mariages - Génère les actes - Ne peut pas modifier les paramètres critiques
+3.4 Utilisateur Consultation - Accès en lecture seule - Consultation des actes et mariages
+
+4. ARCHITECTURE GÉNÉRALE (MULTI-MAIRIES)
+- Chaque mairie est une entité indépendante
+- Toutes les données métiers sont rattachées à une mairie
+- Aucune donnée n’est partagée entre mairies
+- Les permissions sont contrôlées par rôle et par mairie
+
+5. FONCTIONNALITÉS DÉTAILLÉES
+5.1 Authentification & Sécurité
+- Page de connexion (email, mot de passe)
+- Réinitialisation du mot de passe
+- Gestion des sessions sécurisées
+- Rôles et permissions
+- Journalisation des actions sensibles
+
+5.2 Tableau de Bord
+Super Admin : - Nombre total de mairies - Nombre total de mariages - Statistiques globales - Alertes système
+Admin de Mairie : - Statistiques propres à la mairie - Mariages récents - Activité des agents
+Agent : - Accès simplifié aux mariages récents
+
+5.3 Module Mairies (Super Admin uniquement)
+- Liste des mairies
+- Création, modification, désactivation d’une mairie
+Informations par mairie : - Nom officiel - Ville - Arrondissement - Adresse - Téléphone - Email officiel - Logo - Paramètres spécifiques (numérotation des actes, cachet, langue)
+
+5.4 Gestion des Mariages
+- Liste des mariages
+- Recherche et filtres
+- Création et modification
+Informations du mariage : - Identité des deux mariés - Dates et lieux de naissance - Date du mariage - Ville - Arrondissement - Mairie - Régime matrimonial
+
+5.5 Actes de Mariage
+- Génération automatique de l’acte
+- Numéro unique par mairie
+- Aperçu PDF
+- Téléchargement et impression
+- Historique des modifications
+
+5.6 Villes, Arrondissements et Mairies
+- Gestion hiérarchique : Ville → Arrondissement → Mairie
+- Ajout, modification, suppression
+- Données réutilisables dans les formulaires
+
+5.7 Gestion des Utilisateurs
+- Création d’utilisateurs
+- Attribution des rôles
+- Activation / désactivation
+- Affectation à une mairie
+
+5.8 Paramètres
+Paramètres globaux (Super Admin) : - Configuration système - Sécurité - Paramètres généraux
+Paramètres de mairie (Admin Mairie) : - Informations institutionnelles - Numérotation des actes - Logo et cachet
+
+6. INTERFACES & UX
+- Interface desktop-first
+- Sidebar dynamique selon le rôle
+- Pages visibles uniquement si autorisées
+- Design épuré, professionnel, non surchargé
+- Couleurs sobres et institutionnelles
+- Lisibilité et productivité prioritaires
+
+7. CONTRAINTES TECHNIQUES
+- Application web responsive
+- Architecture API REST
+- Sécurité renforcée (authentification, autorisation)
+- Performance et stabilité
+- Scalabilité (ajout de nouvelles mairies)
+
+8. TECHNOLOGIES RECOMMANDÉES
+Frontend : - React ou Vue.js - Ant Design / Material UI / Tailwind CSS
+Backend : - Laravel ou NestJS - API REST sécurisée
+Base de données : - PostgreSQL
+Graphiques : - Apache ECharts - Chart.js ou Recharts
+Diagrammes & documentation : - Lucidchart - draw.io - Mermaid
+
+9. LIVRABLES ATTENDUS
+- Cahier des charges validé
+- Maquettes UI/UX complètes
+- Diagrammes (UML, architecture, flux)
+- Code source
+- Documentation technique
+- Documentation utilisateur
+
+FIN DU DOCUMENT

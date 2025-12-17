@@ -1,0 +1,147 @@
+/* ============================================
+   GESTION LIEUX STYLES
+   ============================================ */
+.gestion-lieux {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+/* Tabs */
+.tabs-container {
+    display: flex;
+    gap: var(--spacing-sm);
+    background: var(--white);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-card);
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: 12px 20px;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--text-secondary);
+    border-radius: var(--border-radius);
+    transition: all var(--transition-fast);
+}
+
+.tab:hover {
+    background: var(--gray-100);
+    color: var(--text-primary);
+}
+
+.tab.active {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.tab-count {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: var(--font-size-xs);
+}
+
+.tab.active .tab-count {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Filters Bar */
+.filters-bar {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 0 var(--spacing-md);
+    flex: 1;
+    max-width: 300px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 10px 0;
+    border: none;
+    background: none;
+    font-size: var(--font-size-sm);
+}
+
+.search-box input:focus {
+    outline: none;
+}
+
+.search-box svg {
+    color: var(--text-light);
+}
+
+.filters-bar .form-control {
+    width: 200px;
+}
+
+/* Location Path */
+.location-path {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.btn-icon {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius-sm);
+}
+
+/* Form Row */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+}
+
+/* Modal Enhancements */
+.modal {
+    max-width: 550px;
+}
+
+@media (max-width: 768px) {
+    .tabs-container {
+        overflow-x: auto;
+    }
+
+    .filters-bar {
+        flex-direction: column;
+    }
+
+    .search-box,
+    .filters-bar .form-control {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,108 @@
+/* ============================================
+   MARIAGES PAGE STYLES
+   ============================================ */
+.mariages-page {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+/* Filters Card */
+.filters-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+    background: var(--white);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-card);
+    flex-wrap: wrap;
+}
+
+.search-form {
+    display: flex;
+    gap: var(--spacing-md);
+    flex: 1;
+}
+
+.search-form .search-box {
+    flex: 1;
+    max-width: 400px;
+}
+
+.filters-group {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.filters-group svg {
+    color: var(--text-light);
+}
+
+.filters-group .form-control {
+    width: 180px;
+}
+
+/* Person Cell */
+.person-cell {
+    display: flex;
+    flex-direction: column;
+}
+
+.person-name {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.person-info {
+    font-size: var(--font-size-xs);
+    color: var(--text-light);
+}
+
+/* Date Cell */
+.date-cell {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: var(--text-secondary);
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    border-top: 1px solid var(--border-color);
+}
+
+.page-info {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .filters-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-form {
+        flex-direction: column;
+    }
+
+    .search-form .search-box {
+        max-width: 100%;
+    }
+
+    .filters-group {
+        width: 100%;
+    }
+
+    .filters-group .form-control {
+        flex: 1;
+    }
+}

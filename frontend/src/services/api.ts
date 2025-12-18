@@ -60,6 +60,9 @@ export const authApi = {
 
     changePassword: (currentPassword: string, newPassword: string) =>
         api.post('/auth/change-password', { currentPassword, newPassword }),
+
+    updateProfile: (data: Record<string, unknown>) =>
+        api.put('/auth/profile', data),
 };
 
 // ============================================

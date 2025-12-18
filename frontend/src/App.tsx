@@ -15,6 +15,9 @@ import Dashboard from './pages/Dashboard/DashboardNew';
 import GestionLieux from './pages/GestionLieux/GestionLieux';
 import Mariages from './pages/Mariages/Mariages';
 import MariageForm from './pages/Mariages/MariageForm';
+import Utilisateurs from './pages/Utilisateurs/Utilisateurs';
+import UtilisateurForm from './pages/Utilisateurs/UtilisateurForm';
+import Parametres from './pages/Parametres/Parametres';
 
 // Styles
 import './index.css';
@@ -122,7 +125,17 @@ function AppRoutes() {
         {/* Utilisateurs */}
         <Route path="utilisateurs" element={
           <RoleRoute allowedRoles={['super_admin', 'admin_mairie']}>
-            <div className="card"><p className="text-center" style={{ padding: '2rem' }}>Page Utilisateurs - À venir</p></div>
+            <Utilisateurs />
+          </RoleRoute>
+        } />
+        <Route path="utilisateurs/nouveau" element={
+          <RoleRoute allowedRoles={['super_admin', 'admin_mairie']}>
+            <UtilisateurForm />
+          </RoleRoute>
+        } />
+        <Route path="utilisateurs/:id/modifier" element={
+          <RoleRoute allowedRoles={['super_admin', 'admin_mairie']}>
+            <UtilisateurForm />
           </RoleRoute>
         } />
 
@@ -134,7 +147,7 @@ function AppRoutes() {
         {/* Paramètres */}
         <Route path="parametres" element={
           <RoleRoute allowedRoles={['super_admin', 'admin_mairie']}>
-            <div className="card"><p className="text-center" style={{ padding: '2rem' }}>Page Paramètres - À venir</p></div>
+            <Parametres />
           </RoleRoute>
         } />
 

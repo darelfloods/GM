@@ -1,16 +1,17 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
+import { ThemeProvider } from './contexts/ThemeContext';
 
 // Layouts
-import MainLayout from './layouts/MainLayout';
+import MainLayout from './layouts/MainLayoutDark';
 
 // Auth Pages
 import Login from './pages/Login/Login';
 import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
 
 // Protected Pages
-import Dashboard from './pages/Dashboard/Dashboard';
+import Dashboard from './pages/Dashboard/DashboardNew';
 import GestionLieux from './pages/GestionLieux/GestionLieux';
 import Mariages from './pages/Mariages/Mariages';
 import MariageForm from './pages/Mariages/MariageForm';
@@ -152,9 +153,11 @@ function AppRoutes() {
 function App() {
   return (
     <BrowserRouter>
-      <AuthProvider>
-        <AppRoutes />
-      </AuthProvider>
+      <ThemeProvider>
+        <AuthProvider>
+          <AppRoutes />
+        </AuthProvider>
+      </ThemeProvider>
     </BrowserRouter>
   );
 }

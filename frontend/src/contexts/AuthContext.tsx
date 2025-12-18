@@ -82,9 +82,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
             localStorage.setItem('token', authToken);
             localStorage.setItem('user', JSON.stringify(userData));
         } catch (error: any) {
-            // Propager l'erreur pour qu'elle soit gérée par le composant Login
-            const errorMessage = error.response?.data?.message || error.message || 'Erreur de connexion';
-            throw new Error(errorMessage);
+            // Propager l'erreur originale pour que le composant Login puisse accéder à error.response
+            throw error;
         }
     };
 

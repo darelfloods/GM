@@ -29,7 +29,9 @@ api.interceptors.request.use(
 api.interceptors.response.use(
     (response) => response,
     (error: AxiosError) => {
-        if (error.response?.status === 401) {
+        // Ne rediriger que si on est déjà authentifié et que le token a expiré
+        // Ne PAS rediriger lors d'une tentative de connexion échouée
+        if (error.response?.status === 401 && error.config?.url !== '/auth/login') {
             localStorage.removeItem('token');
             localStorage.removeItem('user');
             window.location.href = '/login';

@@ -22,9 +22,8 @@ const Login: React.FC = () => {
             await login(email, password);
             navigate('/dashboard');
         } catch (err: any) {
-            setError(
-                err.response?.data?.message || 'Identifiants incorrects'
-            );
+            const errorMessage = err.response?.data?.message || err.message || 'Identifiants incorrects';
+            setError(errorMessage);
         } finally {
             setIsLoading(false);
         }
@@ -128,17 +127,14 @@ const Login: React.FC = () => {
                                     className="btn-submit"
                                     disabled={isLoading}
                                 >
-                                    {isLoading ? (
-                                        <span className="btn-loading">
-                                            <span className="spinner"></span>
-                                            Connexion...
-                                        </span>
-                                    ) : (
-                                        <>
-                                            Se connecter
-                                            <ArrowRight size={18} />
-                                        </>
-                                    )}
+                                    <span className="btn-loading" style={{ display: isLoading ? 'flex' : 'none' }}>
+                                        <span className="spinner"></span>
+                                        Connexion...
+                                    </span>
+                                    <span style={{ display: isLoading ? 'none' : 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                        Se connecter
+                                        <ArrowRight size={18} />
+                                    </span>
                                 </button>
                             </form>
                         </div>
